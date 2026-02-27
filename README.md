@@ -2,9 +2,9 @@
 
 A benchmark for evaluating audio captioning models across three domains: **environmental sound**, **music**, and **speech**.
 
-1,000 curated samples | 13 models evaluated | LLM-as-Judge + reference metrics
+1,000 samples | LLM-as-Judge + reference metrics
 
-## Setup
+## Quick Setup
 
 ```bash
 # 1. Install dependencies
@@ -20,7 +20,7 @@ source credentials.env
 python -m audiocapbench.build_dataset --output-dir data/audio_caption
 ```
 
-## Run Evaluation
+## Quick Evaluation
 
 ```bash
 # Evaluate a model
@@ -35,7 +35,7 @@ source credentials.env && python -m audiocapbench.evaluate \
     --provider openai --model gpt-4o-audio-preview \
     --data-dir data/audio_caption \
     --credentials credentials.env \
-    --max-samples 10 --no-aac-metrics --no-llm-judge
+    --max-samples 10 --no-aac-metrics
 
 # Single category
 source credentials.env && python -m audiocapbench.evaluate \
@@ -44,6 +44,8 @@ source credentials.env && python -m audiocapbench.evaluate \
     --credentials credentials.env \
     --category music --concurrency 10 --max-tokens 8192 --no-aac-metrics
 ```
+---
+# More Details
 
 ## Supported Models
 
