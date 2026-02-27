@@ -1,0 +1,69 @@
+# AudioCapBench default configuration
+
+# Dataset configuration
+data:
+  output_dir: "data/audio_caption"
+  cache_dir: ""  # HuggingFace cache directory (empty = default)
+  seed: 42
+  # Per-category sample counts
+  sound_clotho_count: 10
+  sound_audiocaps_count: 10
+  music_count: 15
+  speech_count: 15
+
+# Model configurations
+models:
+  openai:
+    enabled: true
+    model_id: "gpt-4o-audio-preview"
+    max_tokens: 256
+    temperature: 0.0
+    # Audio sent as base64 in input_audio content block
+    # Requires OPENAI_API_KEY env var
+
+  gemini:
+    enabled: true
+    model_id: "gemini-2.5-flash"
+    max_tokens: 256
+    temperature: 0.0
+    # Audio sent as inline bytes via google-genai
+    # Requires GOOGLE_API_KEY env var
+
+  qwen_audio:
+    enabled: true
+    model_id: "qwen-audio-turbo"
+    max_tokens: 256
+    temperature: 0.0
+    # Audio sent via dashscope MultiModalConversation
+    # Requires DASHSCOPE_API_KEY env var
+    # Note: 30-second max audio duration
+
+# Evaluation configuration
+evaluation:
+  # Metrics to compute (via aac-metrics)
+  # Available: bleu_1, bleu_2, bleu_3, bleu_4, meteor, rouge_l,
+  #            cider_d, spice, spider, fense, spider_fl, fer, vocab
+  metrics:
+    - meteor
+    - bleu_1
+    - bleu_4
+    - rouge_l
+    - cider_d
+    - spice
+    - spider
+    - fense
+  # Whether to use LLM-as-judge evaluation
+  use_llm_judge: true
+  judge_model: "gpt-4.1"
+
+# Prompt instructions per audio category
+prompts:
+  sound:
+    - "Describe what you hear in this audio."
+    - "What sounds can you identify in this audio clip?"
+  music:
+    - "Describe this music clip in detail, including genre, instrumentation, tempo, and mood."
+    - "Characterize this musical excerpt with rich detail; cover genre, instrumentation, and overall atmosphere."
+  speech:
+    - "Describe the speaker and what they are saying, including their tone, emotion, and speaking style."
+    - "Describe this speech audio, including the speaker's characteristics and what is being said."
