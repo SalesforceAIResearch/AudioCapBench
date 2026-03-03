@@ -112,3 +112,19 @@ Individual datasets retain their original licenses:
 - MusicCaps: CC-BY-SA-4.0
 - Emo Speech Caption: See [dataset card](https://huggingface.co/datasets/seastar105/emo_speech_caption_test)
 
+## Citation
+
+If you find our project useful, here is our paper:
+
+```
+@article{Qiu2025LoCoBenchAgentAI,
+  title={AudioCapBench: Quick Evaluation on Audio Captioning across
+Sound, Music, and Speech},
+  author={Jielin Qiu, Jianguo Zhang, Zixiang Chen, Liangwei Yang, Ming Zhu, Juntao Tan, Haolin Chen, Wenting Zhao, Rithesh Murthy, Roshan Ram, Akshara Prabhakar, Shelby Heinecke, Caiming, Xiong, Silvio Savarese, Huan Wang},
+  journal={ArXiv},
+  year={2026},
+  volume={abs/2602.23649}
+}
+```
+
+
