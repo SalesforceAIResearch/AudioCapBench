@@ -104,10 +104,11 @@ AudioCapBench/
 
 ## License
 
-This project is licensed under [CC-BY-NC-4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+This project is licensed under Apache-2.0 license.
 
 Individual datasets retain their original licenses:
 - Clotho: [Tampere University License](https://zenodo.org/record/3490684)
 - AudioCaps: CC-BY-NC-4.0
 - MusicCaps: CC-BY-SA-4.0
 - Emo Speech Caption: See [dataset card](https://huggingface.co/datasets/seastar105/emo_speech_caption_test)
+
